@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <!--  donmccurdy a-frame extras    -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #FAFAFA">
+      <!--   Assets Management Folder  -->
+      <a-assets>
+        <a-asset-item
+          id="head"
+          response-type="arraybuffer"
+          src="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Fheadglb.glb?v=1601537219606"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item>
+          <audio
+            id="sin"
+            src="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Fsinister.mp3?v=1601598345987"
+            preload="auto"
+          ></audio>
+        </a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item>
+          <audio
+            id="time"
+            src="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Ftime.glb?v=1601624565607"
+            preload="auto"
+          ></audio>
+        </a-asset-item>
+      </a-assets>
+
+      <!--   Items Start From The Closest to Furthest     -->
+
+      <!--     Start Camera Perspective  -->
+      <a-entity
+        camera=""
+        position="0 1.6 3.2683"
+        wasd-controls=""
+        rotation="-1.6042818263663052 0.11459155902616862 0"
+        look-controls=""
+        aframe-injected=""
+        data-aframe-inspector-original-camera=""
+      ></a-entity>
+      <!--     End of Camera Perspective   -->
+
+      <!--    Red Riding Cart    -->
+      <a-entity
+        gltf-model="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Fcart.glb?v=1601544847086"
+        position="9.58829 -1.12651 2"
+        scale="0.02 0.02 0.02"
+        rotation="0 85.309 0"
+        sound="src: #sin; 
+               on: click; 
+               volume: 1;
+               refDistance: 4;
+               rolloffFactor: 4;
+               autoplay: true;"
+        play
+      ></a-entity>
+
+      <!--  Color Rings 3 Qty.   -->
+      <a-cylinder
+        position="-0.00722 5.65934 -10.17015"
+        radius="0.5"
+        height="1.5"
+        color="#FFC65D"
+        shadow=""
+        material="color: #15FFF6"
+        geometry="primitive: ring"
+        scale="1.86 1.84 0.97"
+        animation="property: position; to: 0 0 5; dur: 6000; easing: linear; loop: true"
+      ></a-cylinder>
+
+      <a-cylinder
+        position="-0.00722 5.08882 -7.29988"
+        radius="0.5"
+        height="1.5"
+        color="#FFC65D"
+        shadow=""
+        material="color: #6a950e"
+        geometry="primitive: ring"
+        scale="2.73 2.7 0.97"
+        animation="property: position; to: 0 0 5; dur: 4000; easing: linear; loop: true"
+      ></a-cylinder>
+
+      <a-cylinder
+        position="-0.00866 4.45388 -4.0567"
+        radius="0.5"
+        height="1.5"
+        color="#FFC65D"
+        shadow=""
+        material="color: #FA115B"
+        geometry="primitive: ring"
+        scale="3.61 3.62 0.00001"
+        animation="property: position; to: 0 0 3; dur: 2000; easing: linear; loop: true"
+      ></a-cylinder>
+      <!--   End of Rings      -->
+
+      <!--    Triangle Arrow Pathway  -->
+      <a-plane
+        position="0 0 1"
+        rotation="-90 0 0"
+        width="0"
+        height="4"
+        color="#30C7FC"
+        shadow=""
+        material=""
+        geometry="primitive: triangle"
+        animation="property: position; to: 0 5 -10; dur: 5000; easing: linear; loop: true"
+      ></a-plane>
+
+      <a-plane
+        position="0 0 -2"
+        rotation="-90 0 0"
+        width="0"
+        height="4"
+        color="#30C7FC"
+        shadow=""
+        material=""
+        geometry="primitive: triangle"
+        animation="property: position; to: 0 5 -10; dur: 5000; easing: linear; loop: true"
+      ></a-plane>
+
+      <a-plane
+        position="0 0 -6"
+        rotation="-90 0 0"
+        width="0"
+        height="4"
+        color="#30C7FC"
+        shadow=""
+        material=""
+        geometry="primitive: triangle"
+        animation="property: position; to: 1 8 -10; dur: 5000; easing: linear; loop: true"
+      ></a-plane>
+
+      <a-plane
+        position="0 0 -12"
+        rotation="-90 0 0"
+        width="0"
+        height="4"
+        color="#30C7FC"
+        shadow=""
+        material=""
+        geometry="primitive: triangle"
+        animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true"
+      ></a-plane>
+      <!--   End of Triangle Arrow Pathway    -->
+
+      <!--   Plane Base for Welcome Display   -->
+      <a-plane
+        position="0 -0.022 -8.52819"
+        rotation="-90 0 0"
+        width="7"
+        height="4"
+        color="#7BC8A4"
+        shadow=""
+        material=""
+        geometry=""
+      ></a-plane>
+
+      <!--   Welcome Text  Display   -->
+      <a-entity
+        gltf-model="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Fwelcome.glb?v=1601542982266"
+        position="-0.09464 0.5 -8.20269"
+        scale="0.004 0.004 0.004"
+        animation="property: position; to: 0 2.8 20; dur: 20000; easing: linear; loop: true"
+      ></a-entity>
+
+      <!--  Right - Head into Scene      -->
+      <a-entity
+        id="head-right"
+        gltf-model="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Fheadglb.glb?v=1601537219606"
+        position="6.50214 -11.22943 -6.44122"
+        scale="0.18 0.11 0.12"
+        rotation="10 0 0"
+        animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000"
+      ></a-entity>
+
+      <!--  Left - Head into Scene      -->
+      <a-entity
+        id="head-left"
+        gltf-model="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Fheadglb.glb?v=1601537219606"
+        position="-6.50214 -11.22943 -6.44122"
+        scale="0.18 0.11 0.12"
+        rotation="-10 0 0"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      ></a-entity>
+
+      <!--      Time Sand  -->
+      <a-entity
+        id="time-sand"
+        gltf-model="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Ftime.glb?v=1601624565607"
+        position="-0.57111 3.13755 -8.27593"
+        scale="0.34832 -0.30209 -0.4577"
+        rotation="-4.32211466806678 -173.53558597524042 -57.15847346175444"
+        animation="property: rotation; to: 30 -160 20; loop: NaN; dur: 50000"
+      ></a-entity>
+
+      <!--    Virus Blue   -->
+      <a-entity
+        id="flu"
+        gltf-model="https://cdn.glitch.com/176e7db6-2356-493d-82cf-52d83d34830d%2Fflu.glb?v=1601539302179"
+        position="-0.004 5.69176 -10.66028"
+        scale="0.02 0.02 0.02"
+        rotation="-2.0310789635618867 286.8811573117721 0"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      ></a-entity>
+
+      <!-- Black Shape Oval      -->
+      <a-sphere
+        position="0 6.02813 -12.07748"
+        radius="1.25"
+        color="#EF2D5E"
+        shadow=""
+        material="color: #000000"
+        geometry="primitive: circle"
+        scale="1.37 1.4 0.96"
+      ></a-sphere>
+
+      <!-- Scale for Plane -->
+      <!--       <a-cylinder
+        position="1 0.75 -3"
+        radius="0.5"
+        height="1.5"
+        color="#FFC65D"
+        shadow
+      ></a-cylinder> -->
+
+      <!--    Background    -->
+
+      <!--   Purple Sky and Background    -->
+      <a-entity
+        light="color: #ccccff; intensity: 1; type: ambient;"
+        visible=""
+      ></a-entity>
+      <a-entity
+        light="color: ffaaff; intensity: 1.5"
+        position="5 5 5"
+      ></a-entity>
+      <a-entity
+        light="color: black; intensity: 0.5"
+        position="-5 5 15"
+      ></a-entity>
+      <a-entity light="color: black; type: ambient;"></a-entity>
+
+      <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+      <a-assets>
+        <img
+          id="pink"
+          src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg"
+          crossorigin="anonymous"
+        />
+        <img
+          src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png"
+          id="grid"
+          crossorigin="anonymous"
+        />
+        <img
+          src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg"
+          id="chrome"
+          crossorigin="anonymous"
+        />
+        <img
+          id="sky"
+          src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg"
+          crossorigin="anonymous"
+        />
+        <a-asset-item
+          id="dawningFont"
+          src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"
+        ></a-asset-item>
+        <a-asset-item
+          id="exoFont"
+          src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"
+        ></a-asset-item>
+        <a-asset-item
+          id="exoItalicFont"
+          src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"
+        ></a-asset-item>
+      </a-assets>
+      <!-- End of Purple Sky and Background       -->
+
+      <!--    Verticl Stripe Line Base    -->
+      <a-entity
+        geometry="primitive:plane;height:10000;width:10000"
+        rotation="-90 0 0"
+        material="transparent:true;repeat:10000 10000;metalness:0.6;roughness:0.4;sphericalEnvMap:https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg;src:https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png"
+        position=""
+      ></a-entity>
+    </a-scene>
+  </body>
+</html>
